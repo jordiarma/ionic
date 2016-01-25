@@ -1,0 +1,5 @@
+usuari: curs
+pass: Cursos16
+--------------
+
+Ionic: Framework multiplataforma per a dispositius mòbils, fa una aplicació nativa comuna per a totes les plataformes que li indiquis.
