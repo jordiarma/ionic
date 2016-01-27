@@ -3,7 +3,7 @@
     <div class="bar bar-header item-input-inset">
       <label class="item-input-wrapper">
         <i class="icon ion-ios-search placeholder-icon"></i>
-        <input ng-model="cercador" ng-enter="buscar(cercador)" type="search" placeholder="Cerca">
+        <input type="search" placeholder="Busca" ng-enter="buscar()" ng-model="cercador">
       </label>
       <button class="button button-clear">
         Cancelar
@@ -16,8 +16,8 @@
           show-delete="shouldShowDelete"
           show-reorder="shouldShowReorder"
           can-swipe="listCanSwipe">
-      <ion-item ng-repeat="item in items">
-        Hello, {{item}}!
+      <ion-item ng-repeat="ciutat in ciutats">
+        {{ciutat.name}}
       </ion-item>
     </ion-list>
   </ion-content>
