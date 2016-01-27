@@ -1,15 +1,24 @@
-<ion-view view-title="Hola">
+<ion-view view-title="OpenWeather Map">
   <ion-content class="padding">
     <div class="bar bar-header item-input-inset">
       <label class="item-input-wrapper">
         <i class="icon ion-ios-search placeholder-icon"></i>
-        <input type="search" placeholder="Cerca">
+        <input ng-model="cercador" ng-enter="buscar(cercador)" type="search" placeholder="Cerca">
       </label>
       <button class="button button-clear">
         Cancelar
       </button>
     </div>
-    <h4>Ciutats</h4>
-    <p>Las aplicaciones ionic se basan en HTML y AngularJS</p>
+    <h4>
+      Ciutats
+    </h4>
+    <ion-list ng-controller="DashCtrl"
+          show-delete="shouldShowDelete"
+          show-reorder="shouldShowReorder"
+          can-swipe="listCanSwipe">
+      <ion-item ng-repeat="item in items">
+        Hello, {{item}}!
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
