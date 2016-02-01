@@ -1,50 +1,18 @@
 angular.module('starter.services', [])
 
-.factory('Ciutats', function() {
+.factory('Ciutats', function($http) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var ciutats = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'img/ben.png'
-  }, {
-    id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
-  }, {
-    id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
-  }, {
-    id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
-  }, {
-    id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
-  }];
+  var ciutats = [];
 
   return {
     all: function() {
-      return ciutats;
+      return $http.get('http://api.openweathermap.org/data/2.5/find?lat=41.68&lon=1.94&cnt=10&APPID=3da25caa87ab728585fd73a5d2ad6cb7');
     },
-    remove: function(ciutats) {
-      ciutats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(chatId) {
-      for (var i = 0; i < ciutats.length; i++) {
-        if (ciutats[i].id === parseInt(chatId)) {
-          return ciutats[i];
-        }
-      }
-      return null;
+
+    get: function(ciutatId) {
+      return $http.get('http://api.openweathermap.org/data/2.5/weather?id='+ ciutatId + '&APPID = 3da25caa87ab728585fd73a5d2ad6cb7');
     }
   };
 });

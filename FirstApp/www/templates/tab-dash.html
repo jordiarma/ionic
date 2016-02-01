@@ -16,7 +16,7 @@
           show-delete="shouldShowDelete"
           show-reorder="shouldShowReorder"
           can-swipe="listCanSwipe">
-      <ion-item ng-repeat="ciutat in ciutats">
+      <ion-item ng-repeat="ciutat in ciutats" href="#/tab/dash/{{ciutat.id}}">
         {{ciutat.name}}
       </ion-item>
     </ion-list>

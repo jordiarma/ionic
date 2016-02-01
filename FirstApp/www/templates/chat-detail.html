@@ -4,11 +4,25 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="{{chat.name}}">
+<ion-view view-title="{{ciutat.weather[0].name}}">
   <ion-content class="padding">
-    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{chat.lastText}}
-    </p>
+  <div class="list card">
+
+    <div class="item item-avatar">
+      <img ng-src="http://openweathermap.org/img/w/{{ciutat.weather[0].icon}}.png" id="iconaTemps" style="width: 64px; height: 64px">
+      <h2>{{ciutat.weather[0].name}}</h2>
+      <p>Temperatura: {{ciutat.weather[0].main}}</p>
+    </div>
+
+    <div class="item item-image">
+      <!-- mapa -->
+    </div>
+
+    <div class="item">
+      <i class="icon ion-temperature"></i>
+      Max: {{ciutat.weather[0].main.temp_max}} - Min: {{ciutat.weather[0].main.temp_min}}
+    </div>
+
+  </div>
   </ion-content>
 </ion-view>
